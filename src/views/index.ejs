@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+    <h1>LEARN NODEJS EXPRESS</h1>
+
+    <div class="w3-container">
+        <h2>Hoverable Table</h2>
+      
+        <table class="w3-table-all w3-hoverable">
+          <thead>
+            <tr class="w3-light-grey">
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>email</th>
+              <th>address</th>
+              <th>action</th>
+            </tr>
+          </thead>
+           <tbody>
+            <% data.forEach(function(item){ %>
+                <tr>
+                    <td><%=item.fristName%></td>
+                    <td><%=item.lastName%></td>
+                    <td><%=item.email%></td>
+                    <td><%=item.address%></td>
+                    <td>
+                        <a href="/detail-user/<%=item.id%>">Detail</a>
+                        <a href="/edit-user/<%=item.id%>">Edit</a>
+                        <a href="/delete-user/<%=item.id%>">Delete</a>
+                    </td>
+
+                </tr>
+            <%  }); %>
+           </tbody> 
+        </table>
+      </div>
+      <div>
+        <form action="/create-new-user" method="post">
+            <div>
+                <label for="firstName">Firt name</label>
+                <input type="text" id="firstName" name="firstName">
+            </div>
+            <div>
+                <label for="lastname">Last name</label>
+                <input type="text" id="lastname" name="lastname">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+            </div>
+            <div>
+                <label for="">address</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+      </div>
+</body>
+</html>
